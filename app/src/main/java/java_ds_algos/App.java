@@ -100,11 +100,53 @@ public class App {
         System.out.println();
     }
 
+     /******************************************************
+     * 
+     * Linked List =  
+     * 
+     ******************************************************/
+    public void testLinkedList() {
+        System.out.println("Testing linked list...");
+
+        LinkedList<String> linkedList = new LinkedList<String>();
+
+        // Add elements to a linked linst
+        linkedList.offer("A");
+        linkedList.offer("B");
+        linkedList.offer("C");
+        linkedList.offer("D");
+        linkedList.offer("F");
+   
+        // Various operations 
+        System.out.println(linkedList);
+        linkedList.add(4, "E");
+        System.out.println(linkedList);
+        linkedList.remove("E");
+        System.out.println(linkedList);
+        System.out.println(linkedList.indexOf("F"));
+        System.out.println(linkedList.peekFirst());
+        System.out.println(linkedList.peekLast());
+        linkedList.addFirst("Z");
+        linkedList.addLast("G");
+        System.out.println(linkedList);
+
+        // Assignment
+        String first = linkedList.removeFirst();
+        String last = linkedList.removeLast();
+        System.out.println(first);
+        System.out.println(last);
+        System.out.println(linkedList);
+
+
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         App app = new App();
         app.testStack();
         app.testQueue();
         app.testPriorityQueue();
+        app.testLinkedList();
         
     }
 }
