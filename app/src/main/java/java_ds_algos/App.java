@@ -3,7 +3,9 @@
  */
 package java_ds_algos;
 
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -73,10 +75,36 @@ public class App {
         System.out.println();
     }
 
+    /******************************************************
+     * 
+     * Priority Queue = FIFO data structure that servers
+     *                  elements with the highest priority
+     *                  first before elements with lower
+     *                  priority
+     * 
+     ******************************************************/
+    public void testPriorityQueue() {
+        System.out.println("Testing priority queue...");
+        Queue<Double> queue = new PriorityQueue<Double>(Collections.reverseOrder());
+
+        queue.offer(3.0);
+        queue.offer(2.5);
+        queue.offer(4.0);
+        queue.offer(1.5);
+        queue.offer(2.0);
+
+        while(!queue.isEmpty()) {
+            System.out.println(queue.poll());
+        }
+
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         App app = new App();
         app.testStack();
         app.testQueue();
+        app.testPriorityQueue();
         
     }
 }
